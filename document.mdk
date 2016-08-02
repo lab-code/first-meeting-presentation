@@ -1,9 +1,8 @@
 [INCLUDE=presentation]
-Title         : Demo presentation in Madoko
-Sub Title     : In both HTML and PDF
-Author        : Daan Leijen
-Affiliation   : Microsoft Research
-Email         : daan@microsoft.com
+Title         : Coding in sciences
+Sub Title     : It's fun, it's swag, it's necessary
+Author        : Lukáš Hejtmánek
+Email         : hejtmy@gmail.com
 Reveal Theme  : sky
 Beamer Theme  : singapore
 
@@ -13,7 +12,7 @@ Beamer Theme  : singapore
 
 [TOC]
 
-# Madoko Presentation
+# Why to code
 
 Using [Madoko] it is easy to create beautiful presentations.
 
@@ -28,14 +27,66 @@ Using [Madoko] it is easy to create beautiful presentations.
 
 [madoko]: http://madoko.codeplex.com
 
-## Reveal.js
+~ Begin Vertical
+  # Basics of programming 
+  
+  ## Flow control
+  
+  ## Data types
+  
+  ## Versioning
+  
+  ## How computers work
+  
+~ End Vertical
 
-`reveal.js` is a framework for easily creating beautiful presentations using
-HTML. You'll need a browser with support for CSS 3D transforms to see it in
-its full glory. 
+~ Begin Vertical 
+  
+  ## Programming languages
+  There are several interesting coding languages relevant to scientific programming. But the key is, that knowing one well 
+  will make you understand the reset much easier. 
+  
+  ## R
+  ```
+   read_table <- function(path){
+    if(is.char(path)){
+      return read.table(path, sep = ";", header = T)
+    } else {
+      print(paste("path is type ", class(path), ", shoud be string", sep = "", collapse = ""))
+    }
+   } 
+  ```
+  Good: Amazing community, variety of packages, dynamically typed, prepared for data analysis (data.frame)
+  Bad: Sometimes weird syntax, no code standards, no official OOP support, needs 3rd party software to be user friendly
+  
+  ## Python
+  ```python
+    import numpy as np
+    import pandas as pd
+    def read_table(path):
+      if type(path) is str:
+        return pd.read_csv(path, sep = ";", header = True)
+      else:
+        print("path is type " + type(o) + ", shoudl be string");
+  ```   
+  Good: Simple to learn, dynamically typed, vast use everywhere - Youtube, Machine learning(Tensor flow)), Scipy, Numpy packages make it par with R, supports OOP 
+  Jupyter notebooks are awesome
+   
+  Bad: Still missing the vast community support, not too many packages 
+  
+  ## Matlab
+  
+  ```matlab
+    function table = readtable(path)
+    end  
+  ```
+  
+  Good: Fast matrix wise computations, lot of functionality in box (graphing, simulations), SPM, Fieldtrip, EEGLAB
+  Bad: Proprietary and expensive as hell, RAM expensive, stupid standards
+  
+~ End Vertical
 
-And any Madoko features just work. Here is some math:
-
+## Stuff
 ~ Begin Framed { padding:1ex; margin-top:1ex }
 A famous equation is $e = mc^2$, but this one is 
 famous too:
